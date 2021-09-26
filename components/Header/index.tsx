@@ -6,7 +6,7 @@ export default function Header() {
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
           <ActiveLink activeClassName={styles.active} href="/">
-            <h1>Patrick Cruz </h1>
+            <h1>PATRICK CRUZ.</h1>
             </ActiveLink>
         <nav>
           <ActiveLink activeClassName={styles.active} href="/">

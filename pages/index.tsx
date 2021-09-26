@@ -41,7 +41,7 @@ export default function Home() {
         </Col>
         <Col md={6}>
           <Canvas>
-          <Controls /> 
+          {/* <Controls />  */}
 
              <Scene />
           </Canvas>

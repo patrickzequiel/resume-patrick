@@ -1,8 +1,12 @@
 import Card from '../../components/Card'
 import styles from './styles.module.scss';
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Head from 'next/head';
+
+import food from "../../public/images/food.jpeg";
+import codenation from "../../public/images/codenation.png";
+
 
 const Portfolio = () => {
     return (
@@ -20,22 +24,18 @@ const Portfolio = () => {
                             description="Description"
                             liked={false}
                             likeCount={0}
+                            images={food}
+                            link="https:/google.com"
                         />
                         <Card
                             author="Patrick Cruz"
-                            title="Test Food"
+                            title="Codenation"
                             date="September 2020"
                             description="Description"
                             liked={false}
                             likeCount={0}
-                        />
-                        <Card
-                            author="Patrick Cruz"
-                            title="Test Food"
-                            date="September 2020"
-                            description="Description"
-                            liked={false}
-                            likeCount={0}
+                            images={codenation}
+                            link="https:/github.com/patrickzequiel/squad4_nodejs_kroton_codenation"
                         />
                     </Row>
                 </Container>
