@@ -15,8 +15,8 @@ interface SizeProps {
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0
   });
 
   useEffect(() => {
@@ -46,9 +46,8 @@ export default function Header() {
         <ActiveLink activeClassName={styles.active} href="/">
           <h1 className={styles.header__content__logo}>Patrick Cruz.</h1>
         </ActiveLink>
-        <nav className={`${styles.header__content__nav} ${
-                        menuOpen && size.width < 768 ? styles.isMenu : ""
-                    }`}>
+        <nav className={`${styles.header__content__nav} ${menuOpen && size.width < 768 ? styles.isMenu : ""
+          }`}>
           <ul>
             <li>
               <ActiveLink activeClassName={styles.active} href="/" onClick={menuToggleHandler}>
@@ -66,13 +65,13 @@ export default function Header() {
               </ActiveLink></li>
           </ul>
         </nav>
-            <div className={styles.header__content__toggle}>
-                    {!menuOpen ? (
-                        <BiMenuAltRight onClick={menuToggleHandler} />
-                    ) : (
-                        <AiOutlineClose onClick={menuToggleHandler} />
-                    )}
-                </div>
+        <div className={styles.header__content__toggle}>
+          {!menuOpen ? (
+            <BiMenuAltRight onClick={menuToggleHandler} />
+          ) : (
+            <AiOutlineClose onClick={menuToggleHandler} />
+          )}
+        </div>
       </div>
     </header>
   )
