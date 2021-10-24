@@ -1,0 +1,39 @@
+
+.container {
+    font-size: 10rem;
+    text-align: left;
+    max-width: 100%;
+    margin: 0 20px;
+    color: #fff;
+    text-align: center;
+    justify-content: inter-word;
+}
+
+.resumeItem .resumeTitle {
+    line-height: 18px;
+    font-size: 0.9em;
+    background: #5234795d;
+    padding: 8px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .resumeItem ul {
+    padding-left: 20px;
+    text-align: justify;
+  }
+  
+  .resumeItem ul li {
+    padding-bottom: 10px;
+    list-style: none;
+  }
+  
+  .resumeItem:last-child {
+    padding-bottom: 0;
+  }
+
+
+.p {
+    text-align: center;
+}
