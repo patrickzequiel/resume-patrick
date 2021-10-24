@@ -8,6 +8,7 @@ import Scene from '../components/Canva/Scene';
 import Head from 'next/head';
 
 import styles from './home.module.scss';
+// import ThreeJs from '../components/ThreeJs';
 
 interface HomeProps {
   product: {
@@ -40,11 +41,11 @@ export default function Home() {
           </main>
         </Col>
         <Col md={6}>
-          <Canvas>
-          {/* <Controls />  */}
+          {/* <ThreeJs /> */}
+          {/* <Controls />  */} 
 
-             <Scene />
-          </Canvas>
+          {/* <Scene /> */}
+
         </Col>
       </Row>
 

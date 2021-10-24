@@ -1,10 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 
+
 * { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+// colors
+$dark: rgb(29, 29, 29);
+$light: #fff;
+$primary: rgb(162, 162, 246);
+$bg: rgb(244, 244, 255);
 
 :root {
   --white: #FFFFFF;
@@ -17,6 +24,8 @@
 
   --cyan-500: #61dafb;
   --yellow-500: #eba417;
+
+  --headerHeight: 100px;
 }
 
 // Define medida para Ipad
@@ -51,4 +60,13 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+@mixin breakpoint($point) {
+  @if $point == md {
+      // 768px
+      @media (min-width: 48em) {
+          @content;
+      }
+  }
 }
