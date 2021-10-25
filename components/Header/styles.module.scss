@@ -33,11 +33,27 @@
 
 
     &__logo {
-        font-size: 2rem;
+        font-size: 20rem;
         font-weight: bold;
-        text-decoration: none;
-        color: var(--color-text);
+        text-decoration: none; 
     }
+
+    h1 {
+        font-size: 3rem;
+        font-weight: lighter;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+
+        &:nth-child(2) {
+            font-weight: bolder;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    
 
     &__nav {
         top: 0;
@@ -45,6 +61,7 @@
         bottom: 0;
         width: 100%;
         height: 100vh;
+        font-weight: bolder;
         position: fixed;
         display: flex;
         flex-direction: column;
@@ -52,17 +69,20 @@
         align-items: center;
         text-align: center;
         background: rgba(var(--color-text), 0.9);
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(1px) saturate(300%);
         transform: translate(0);
         transition: 0.3s ease transform;
+        // background-color: yellow;
 
         @include breakpoint(md) {
+            color: var(--color-text);
             transform: none;
             flex-direction: row;
             background: transparent;
             width: auto;
             height: 100%;
             position: static;
+            font-weight: lighter;
         }
         ul {
             list-style: none;
@@ -93,7 +113,7 @@
                     transition: 0.3s ease all;
 
                     &:hover {
-                        background: rgba(var(--color-text), 0.1);
+                        color: var(--yellow-500);
                     }
                     &:active {
                         border-radius: calc(#{12px} + 6px);

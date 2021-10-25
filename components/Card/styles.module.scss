@@ -4,7 +4,7 @@
 	padding: 20px;
 	border-radius: 10px;
 	border: 0px;
-	border-color: tomato;
+	border-color: var(--yellow-500);
 	border-style: solid;
 	transition: 200ms;
     max-width: 380px;
@@ -12,9 +12,10 @@
 }
 
 .card:hover {
+	cursor: pointer;
 	transition: 200ms;
 	border: 3px;
-	border-color: tomato;
+	border-color: var(--yellow-500);
 	border-style: solid;
 }
 
@@ -28,7 +29,7 @@
 .profile {
 	width: 2.5rem;
 	height: 2.5rem;
-	background-color: tomato;
+	background-color: var(--yellow-500);
 	border-radius: 50%;
 	margin: 10px;
 	font-size: 20pt;

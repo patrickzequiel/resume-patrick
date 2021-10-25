@@ -44,7 +44,10 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.header__content}>
         <ActiveLink activeClassName={styles.active} href="/">
-          <h1 className={styles.header__content__logo}>Patrick Cruz.</h1>
+          <h1 className={styles.header__content__logo}>
+            <h1>PATRICK</h1> 
+            <h1>CRUZ.</h1>
+            </h1>
         </ActiveLink>
         <nav className={`${styles.header__content__nav} ${menuOpen && size.width < 768 ? styles.isMenu : ""
           }`}>

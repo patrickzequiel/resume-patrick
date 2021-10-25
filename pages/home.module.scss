@@ -15,17 +15,18 @@
 
     > span {
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: lighter;
     }
 
     h1 {
         font-size: 4.5rem;
         line-height: 4.5rem;
-        font-weight: 900;
+        font-weight: bold;
         margin-top: 2.5rem;
 
         span {
             color: var(--cyan-900);
+            
         }
     }
 
@@ -42,7 +43,7 @@
 
         span {
             color: var(--cyan-900);
-            font-weight: bold;
+            font-weight: normal
         }
     }
 
