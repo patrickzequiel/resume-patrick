@@ -3,7 +3,8 @@ module.exports = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   images: {
-    disableStaticImages: true
+    disableStaticImages: true,
+    domains: ['i.ibb.co'],
   },
   webpack: (config, options) => {
     config.module.rules.push({

@@ -29,7 +29,7 @@ export default function Card({ author, title, date, description, liked, likeCoun
           <div className={styles.cardDate}>{date}</div>
         </div>
       </div>
-      <Image className={styles.cardImage} src={require(images)} alt="Logo" layout="responsive"
+      <Image className={styles.cardImage} src={images} alt="Logo" layout="responsive"
        objectFit="cover"
        width={6}
        height={4} />
@@ -46,9 +46,9 @@ export default function Card({ author, title, date, description, liked, likeCoun
           width={6}
           height={4}/>
         )}
-        <div className={styles.likeText}>
+        {/* <div className={styles.likeText}>
           <b>{likeCount}</b> liked.
-        </div>
+        </div> */}
       </div>
     </div>
     </Link>
