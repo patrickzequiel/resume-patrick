@@ -7,7 +7,13 @@ import NProgress from 'nprogress'; //nprogress module
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  Router.events.on('routeChangeStart', () => NProgress.start()); Router.events.on('routeChangeComplete', () => NProgress.done()); Router.events.on('routeChangeError', () => NProgress.done());  
+  Router.events.on('routeChangeStart', () =>
+    NProgress.start()); Router.events.on(
+      'routeChangeComplete', () =>
+      NProgress.done()
+    ); Router.events.on(
+      'routeChangeError', () =>
+      NProgress.done());
 
   return (
     <>
@@ -15,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       {/* <ReactLoading type={'balls'} color={'yellow'} height={'20%'} width={'20%'} /> */}
       <Component {...pageProps} />
     </>
-    )
+  )
 }
 
 export default MyApp

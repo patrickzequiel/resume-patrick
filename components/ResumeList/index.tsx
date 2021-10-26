@@ -6,7 +6,7 @@ interface CardResumeProps {
     content: string[];
 }
 
-export default function CardResume({ title, date, content}: CardResumeProps){
+export default function ResumeList({ title, date, content}: CardResumeProps){
     
   return (
     
