@@ -1,13 +1,30 @@
-import Card from '../../components/Card'
-import styles from './styles.module.scss';
-
+import { useEffect, useState } from 'react';
 import { Container, Row } from "react-bootstrap";
 import Head from 'next/head';
+
+
+import Card from '../../components/Card'
+import styles from './styles.module.scss';
 
 import food from "../../public/images/food.jpeg";
 import codenation from "../../public/images/codenation.png";
 import patriflix from "../../public/images/patriflix.png";
 import orkut from "../../public/images/orkut.png";
+import flappy from "../../public/images/flappy.png";
+
+import Data from '../../services/data.json'
+
+interface PortfolioProps { 
+    id: number;
+    author: string;
+    title: string;
+    date: string;
+    description: string;
+    liked: boolean;
+    likeCount: number;
+    images: string;
+    link: string;
+}
 
 const Portfolio = () => {
     return (
@@ -18,49 +35,24 @@ const Portfolio = () => {
             <Container fluid className={styles.cardsContainer}>
                 <Container>
                     <Row style={{ justifyContent: "center", position: "relative", }}>
+                    {Data.map(portfolio => {
+                        return (
                         <Card
-                            author="Patrick Cruz"
-                            title="Test Food"
-                            date="September 2020"
-                            description="Description"
-                            liked={false}
-                            likeCount={0}
-                            images={food}
-                            link="https:/google.com"
-                        />
-                        <Card
-                            author="Patrick Cruz"
-                            title="Codenation"
-                            date="September 2020"
-                            description="Description"
-                            liked={false}
-                            likeCount={0}
-                            images={codenation}
-                            link="https:/github.com/patrickzequiel/squad4_nodejs_kroton_codenation"
-                        />
-                        <Card
-                            author="Patrick Cruz"
-                            title="Orkut"
-                            date="April 2021"
-                            description="Description"
-                            liked={false}
-                            likeCount={0}
-                            images={orkut}
-                            link="https://github.com/patrickzequiel/imersao-alura-orkut"
-                        />
-                        <Card
-                            author="Patrick Cruz"
-                            title="Patriflix"
-                            date="December 2020"
-                            description="Description"
-                            liked={false}
-                            likeCount={0}
-                            images={patriflix}
-                            link="https://patriflix-alura-i0nz9wi6t.vercel.app/"
-                        />
+                                key={portfolio.id}
+                                author={portfolio.author}
+                                title={portfolio.title}
+                                date={portfolio.date}
+                                description={portfolio.description}
+                                liked={portfolio.liked}
+                                likeCount={portfolio.likeCount}
+                                images={portfolio.images}
+                                link={portfolio.link}
+                            />
+                     ) })} 
                     </Row>
                 </Container>
             </Container>
+            
         </>
     )
 

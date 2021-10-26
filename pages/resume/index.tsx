@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import CardResume from "../../components/CardResume";
+import ResumeList from "../../components/ResumeList";
 import Head from 'next/head';
 
 import { Container, Row, Col } from "react-bootstrap";
@@ -26,7 +26,7 @@ const Resume = () => {
                     <Row className={styles.resume}>
                         <Col md={6} className={styles.resumeLeft}>
                             <h3 className={styles.resumeTitle}>Experience</h3>
-                            <CardResume
+                            <ResumeList
                                 title="JUNIOR ML ENGINEER [Omdena]"
                                 date="June 2020 - August 2020"
                                 content={[
@@ -34,7 +34,7 @@ const Resume = () => {
                                     " Utilized the data to find the issues using Topic Modelling and Building models using LSTM, BERT to predict the sentiments of the youth.",
                                 ]}
                             />
-                            <CardResume
+                            <ResumeList
                                 title="JUNIOR ML ENGINEER [Omdena]"
                                 date="June 2020 - August 2020"
                                 content={[
@@ -42,7 +42,7 @@ const Resume = () => {
                                     " Utilized the data to find the issues using Topic Modelling and Building models using LSTM, BERT to predict the sentiments of the youth.",
                                 ]}
                             />
-                            <CardResume
+                            <ResumeList
                                 title="JUNIOR ML ENGINEER [Omdena]"
                                 date="June 2020 - August 2020"
                                 content={[
@@ -50,7 +50,7 @@ const Resume = () => {
                                     " Utilized the data to find the issues using Topic Modelling and Building models using LSTM, BERT to predict the sentiments of the youth.",
                                 ]}
                             />
-                            <CardResume
+                            <ResumeList
                                 title="JUNIOR ML ENGINEER [Omdena]"
                                 date="June 2020 - August 2020"
                                 content={[
@@ -62,17 +62,17 @@ const Resume = () => {
 
                         <Col md={6} className={styles.resumeRight}>
                             <h3 className={styles.resumeTitle}>Education</h3>
-                            <CardResume
+                            <ResumeList
                                 title="IMSC MATHS AND COMPUTING [BIT Mesra, Ranchi] "
                                 date="2018 - Present"
                                 content={[`CGPA:`]}
                             />
-                            <CardResume
+                            <ResumeList
                                 title="12TH BOARD [ODM Public School,Odisha]"
                                 date="2015 - 2017"
                                 content={["Precentage: 88%"]}
                             />
-                            <CardResume
+                            <ResumeList
                                 title="10TH BOARD [ST Mary's School,Odisha] "
                                 date="2005 - 2015"
                                 content={["Precentage: 86%"]}
