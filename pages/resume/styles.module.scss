@@ -90,23 +90,24 @@
 .resume .resumeTitle {
   padding: 0 0 10px 25px;
   margin-top: -2px;
-  border-left: 2px solid #8a49a8;
+  // border-left: 2px solid var(--yellow-500);
   position: relative;
 }
 
 
 .btnPrimary {
   color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
+  background-color: var(--yellow-500);
+  border-color: var(--yellow-500);
   width: 150px;
   margin: 0 0px 40px;
 }
 
 .btnPrimary:hover {
   color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
+  background-color: var(--yellow-500);
+  border-color: var(--yellow-500);
+  filter: grayscale(20%);
 }
 .btn:focus {
   outline: none !important;

@@ -28,6 +28,7 @@ export default function Header() {
     };
     window.addEventListener("resize", handleResize);
 
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -40,6 +41,8 @@ export default function Header() {
   const menuToggleHandler = () => {
     setMenuOpen((p) => !p);
   };
+
+
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>

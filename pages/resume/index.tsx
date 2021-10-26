@@ -25,7 +25,7 @@ const Resume = () => {
                     </Row >
                     <Row className={styles.resume}>
                         <Col md={6} className={styles.resumeLeft}>
-                            <h3 className={styles.resumeTitle}>Experience</h3>
+                            <h3 className={styles.resumeTitle}>🧑🏻‍💻 Experience</h3>
                             <ResumeList
                                 title="JUNIOR ML ENGINEER [Omdena]"
                                 date="June 2020 - August 2020"
@@ -61,7 +61,7 @@ const Resume = () => {
                         </Col>
 
                         <Col md={6} className={styles.resumeRight}>
-                            <h3 className={styles.resumeTitle}>Education</h3>
+                            <h3 className={styles.resumeTitle}>🧑🏻‍🎓 Education</h3>
                             <ResumeList
                                 title="IMSC MATHS AND COMPUTING [BIT Mesra, Ranchi] "
                                 date="2018 - Present"
