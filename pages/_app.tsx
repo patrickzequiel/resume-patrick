@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import NProgress from 'nprogress'; //nprogress module
 
 import '../styles/globals.scss'
+import { Footer } from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   Router.events.on('routeChangeStart', () =>
@@ -17,9 +18,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Header />
+        <Header top={60}/>
       {/* <ReactLoading type={'balls'} color={'yellow'} height={'20%'} width={'20%'} /> */}
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 }

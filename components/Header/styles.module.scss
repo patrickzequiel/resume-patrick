@@ -12,12 +12,13 @@
   width: 100%;
   height: var(--headerHeight);
   padding: 0 1.5rem;
+  background-color: var(--gray-900);
+
   
   @include breakpoint(md) {
     padding: 0 3rem;
   }
   transition: 0.3s ease all;
-
 
   &__content {
     overflow: hidden;
@@ -75,12 +76,12 @@
         transform: translate(0);
         transition: 0.3s ease transform;
         background-color: var(--gray-900);
+        // backdrop-filter: blur(10px);
 
         @include breakpoint(md) {
             color: var(--color-text);
             transform: none;
             flex-direction: row;
-            background: transparent;
             width: auto;
             height: 100%;
             position: static;
@@ -119,9 +120,9 @@
                         background-color: white;
                         border-radius: 5px;
                     }
-                    &:active {
-                        border-radius: calc(#{12px} + 6px);
-                        background: linear-gradient(rgba(var(--color-text), 0.1), rgba(var(--color-text), 0.2));
+                    &.active {
+                        border-radius: calc(#{1px} + 5px);
+                        background: var(--yellow-500);
                     }
                 }
             }
@@ -130,7 +131,7 @@
             cursor: pointer;
             outline: none;
             padding: 0.75rem 1.25rem;
-            border-radius: 12px;
+            border-radius: 6px;
             font-size: 1rem;
             font-family: inherit;
             background: var(--gray-100);
@@ -174,3 +175,14 @@
 }
 }
 
+.sticky__wrapper {
+    position: relative;
+    height: 4rem; /* probably you need to set height value for wrapper */
+  }
+  
+.sticky .sticky__inner {
+    width: 100%;
+    position: fixed;
+    // top: 0; 
+    z-index: 1;
+}

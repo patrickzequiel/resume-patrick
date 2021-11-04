@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  esmodules: true,
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   images: {
