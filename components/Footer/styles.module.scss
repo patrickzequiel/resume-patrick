@@ -23,6 +23,11 @@
       margin-bottom: 70px;
     }
 
+    &__name {
+      display: flex;
+      align-items: center;
+    }
+
     &__icons {
 
       a + a {
