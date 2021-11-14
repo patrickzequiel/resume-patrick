@@ -23,15 +23,26 @@ interface ResumeProps {
     }
 }
 
+interface EducationProps {
+    uid: string;
+    data: {
+        date: string;
+        title: RichTextBlock[],
+        period: RichTextBlock[],
+        text: RichTextBlock[],
+    }
+}
+
 interface ResumeList {
     resume: ResumeProps[];
+    education: EducationProps[];
 }
 
 
 
 
-const Resume = ({ resume }: ResumeList) => {
-    console.log(resume);
+const Resume = ({ resume, education }: ResumeList) => {
+    console.log(education);
     return (
         <>
             <Head>
@@ -57,25 +68,17 @@ const Resume = ({ resume }: ResumeList) => {
                             ))}
                         </Col>
 
-                        {/* <Col md={6} className={styles.resumeRight}>
+                        <Col md={6} className={styles.resumeRight}>
                             <h3 className={styles.resumeTitle}>🧑🏻‍🎓 Education</h3>
-                            <ResumeList
-                                title="IMSC MATHS AND COMPUTING [BIT Mesra, Ranchi] "
-                                date="2018 - Present"
-                                content={[`CGPA:`]}
-                            />
-                            <ResumeList
-                                title="12TH BOARD [ODM Public School,Odisha]"
-                                date="2015 - 2017"
-                                content={["Precentage: 88%"]}
-                            />
-                            <ResumeList
-                                title="10TH BOARD [ST Mary's School,Odisha] "
-                                date="2005 - 2015"
-                                content={["Precentage: 86%"]}
-                            />
+                            {education.map(educations => (
+                                <ResumeList
+                                    title={RichText.asText(educations.data.title)}
+                                    date={RichText.asText(educations.data.period)}
+                                    content={RichText.asText(educations.data.text)}
+                                />
+                            ))}
 
-                        </Col> */}
+                        </Col>
                     </Row>
                 </Container>
             </Container>
@@ -95,9 +98,15 @@ export const getStaticProps: GetStaticProps = async () => {
         }
     );
 
-    console.log(JSON.stringify(resumeResponse, null, 2))
+    const educationResponse = await prismic.query(
+        [Prismic.Predicates.at('document.type', 'education')],
+        {
+            fetch: ['education.title', 'education.date', 'education.period', 'education.text'],
+            pageSize: 100,
+        }
+    );
 
-    const content = resumeResponse.results.map(list => ({
+    const contentResume = resumeResponse.results.map(list => ({
         uid: list.uid,
         data: {
             date: list.data.date,
@@ -107,13 +116,28 @@ export const getStaticProps: GetStaticProps = async () => {
         }
     }))
 
-    const resume = content.sort((a, b) => {
+    const contentEducation = educationResponse.results.map(list => ({
+        uid: list.uid,
+        data: {
+            date: list.data.date,
+            title: list.data.title,
+            period: list.data.period,
+            text: list.data.text,
+        }
+    }))
+
+    const resume = contentResume.sort((a, b) => {
+        return b.data.date.localeCompare(a.data.date);
+    });
+
+    const education = contentEducation.sort((a, b) => {
         return b.data.date.localeCompare(a.data.date);
     });
 
     return {
         props: {
-            resume
+            resume,
+            education
         }
     };
 };
