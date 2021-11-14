@@ -1,9 +1,11 @@
+import { RichText } from 'prismic-reactjs'
+
 import styles from './styles.module.scss';
 
 interface CardResumeProps {
     title: string;
     date: string;
-    content: string[];
+    content: string;
 }
 
 export default function ResumeList({ title, date, content}: CardResumeProps){
@@ -18,9 +20,7 @@ export default function ResumeList({ title, date, content}: CardResumeProps){
         <em>{date}</em>
       </p>
       <ul>
-        {content.map((value, index) => (
-          <li key={index}> ‣ {value}</li>
-        ))}
+          <li> ‣ {content}</li>
       </ul>
     </div>
   );
