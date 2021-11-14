@@ -11,7 +11,7 @@ import { getPrismicClient } from '../../services/prismic';
 
 import styles from './styles.module.scss';
 import ResumeList from "../../components/ResumeList";
-import pdf from "../../public/images/logo.svg";
+// import pdf from "../../assets/resume.pdf";
 
 interface ResumeProps {
     uid: string;
@@ -50,7 +50,7 @@ const Resume = ({ resume, education }: ResumeList) => {
             </Head>
             <Container fluid className={styles.resumeSection}>
                 <Container>
-                    <Row style={{ justifyContent: "center", position: "relative" }}>
+                    <Row style={{ justifyContent: "center", marginTop: "40px", position: "relative" }}>
                         <Button className={styles.btnPrimary} target="_blank">
                             <AiOutlineDownload />
                             &nbsp;Download CV
