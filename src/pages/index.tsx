@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
-import Type from "./type";
-import { Row, Col } from "react-bootstrap";
+import Type from './type';
+import { Row, Col } from 'react-bootstrap';
 import { Canvas } from 'react-three-fiber';
 import Controls from '../components/Canva/Controls';
 import Scene from '../components/Canva/Scene';

@@ -1,9 +1,9 @@
-import heartOutline from "../../assets/images/heart-outline.png"; 
-import heartFill from "../../assets/images/heart-fill.png"; 
-import Image from "next/image"
-import Link from "next/link"
+import heartOutline from '../../assets/images/heart-outline.png'; 
+import heartFill from '../../assets/images/heart-fill.png'; 
+import Image from 'next/image'
+import Link from 'next/link'
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface CardProps {
     author: string;

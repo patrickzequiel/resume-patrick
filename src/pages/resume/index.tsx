@@ -1,17 +1,19 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 
-import { Container, Row, Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import { Container, Row, Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
-import { AiOutlineDownload } from "react-icons/ai";
+import { AiOutlineDownload } from 'react-icons/ai';
 import Prismic from '@prismicio/client';
 import { RichText, RichTextBlock } from 'prismic-reactjs'
 import { getPrismicClient } from '../../services/prismic';
 
 import styles from './styles.module.scss';
-import ResumeList from "../../components/ResumeList";
-// import pdf from "../../assets/resume.pdf";
+import ResumeList from '../../components/ResumeList';
+import dynamic from 'next/dynamic';
+
+// import pdf from './patrick-resume.pdf';
 
 interface ResumeProps {
     uid: string;
@@ -38,9 +40,6 @@ interface ResumeList {
     education: EducationProps[];
 }
 
-
-
-
 const Resume = ({ resume, education }: ResumeList) => {
     console.log(education);
     return (
@@ -50,12 +49,12 @@ const Resume = ({ resume, education }: ResumeList) => {
             </Head>
             <Container fluid className={styles.resumeSection}>
                 <Container>
-                    <Row style={{ justifyContent: "center", marginTop: "40px", position: "relative" }}>
-                        <Button className={styles.btnPrimary} target="_blank">
+                    {/* <Row style={{ justifyContent: "center", marginTop: "40px", position: "relative" }}>
+                        <Button className={styles.btnPrimary} href={"../../assets/patrick-resume.pdf"} target="_blank">
                             <AiOutlineDownload />
                             &nbsp;Download CV
                         </Button>
-                    </Row >
+                    </Row > */}
                     <Row className={styles.resume}>
                         <Col md={6} className={styles.resumeLeft}>
                             <h3 className={styles.resumeTitle}>🧑🏻‍💻 Experience</h3>

@@ -2,15 +2,8 @@ import { useEffect, useState } from 'react';
 import { Container, Row } from "react-bootstrap";
 import Head from 'next/head';
 
-
 import Card from '../../components/Card'
 import styles from './styles.module.scss';
-
-import food from "../../public/images/food.jpeg";
-import codenation from "../../public/images/codenation.png";
-import patriflix from "../../public/images/patriflix.png";
-import orkut from "../../public/images/orkut.png";
-import flappy from "../../public/images/flappy.png";
 
 import Data from '../../services/data.json'
 

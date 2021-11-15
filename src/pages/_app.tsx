@@ -1,11 +1,11 @@
-import { AppProps } from "next/app"
-import { Router } from "next/router";
+import { AppProps } from 'next/app'
+import { Router } from 'next/router';
 import ReactLoading from 'react-loading';
 import Header from '../components/Header'
 import NProgress from 'nprogress'; //nprogress module
 
 import '../styles/globals.scss'
-import { Footer } from "../components/Footer";
+import { Footer } from '../components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   Router.events.on('routeChangeStart', () =>
