@@ -10,13 +10,6 @@ import Head from 'next/head';
 import styles from './home.module.scss';
 // import ThreeJs from '../components/ThreeJs';
 
-interface HomeProps {
-  product: {
-    priceId: string;
-    amount: number;
-  }
-}
-
 export default function Home() {
 
   return (
