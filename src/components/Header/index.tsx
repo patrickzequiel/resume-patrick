@@ -1,29 +1,29 @@
-import { ActiveLink } from '../ActiveLink'
+import { ActiveLink } from '../ActiveLink';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 import { useEffect, useRef, useState } from 'react';
 
 interface SizeProps {
-  width: number,
-  height: number
+  width: number;
+  height: number;
 }
 
 interface StickyProps {
-  top: number,
+  top: number;
 }
 
 export default function Header({ top }: StickyProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [width, setWidth] = useState<number>(0);
   const [size, setSize] = useState({
     width: 0,
-    height: 0
+    height: 0,
   });
   const [isSticky, setSticky] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,12 +32,10 @@ export default function Header({ top }: StickyProps) {
         height: window.innerHeight,
       });
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
-
 
   useEffect(() => {
     // Add scroll event when the component is loaded
@@ -61,20 +59,24 @@ export default function Header({ top }: StickyProps) {
     }
   };
 
-
   useEffect(() => {
     if (size.width > 768 && menuOpen) {
       setMenuOpen(false);
     }
+    
   }, [size.width, menuOpen]);
 
+
   const menuToggleHandler = () => {
-    setMenuOpen(!menuOpen);
+    const isMobile = size.width <= 768;
+    setMenuOpen(isMobile ? !menuOpen : menuOpen);
   };
 
-
   return (
-    <div className={`${styles.sticky__wrapper}  ${isSticky && styles.sticky} `} ref={ref}>
+    <div
+      className={`${styles.sticky__wrapper}  ${isSticky && styles.sticky} `}
+      ref={ref}
+    >
       <div className={styles.sticky__inner}>
         <header className={styles.header}>
           <div className={styles.header__content}>
@@ -84,23 +86,39 @@ export default function Header({ top }: StickyProps) {
                 <h1>CRUZ.</h1>
               </h1>
             </ActiveLink>
-            <nav className={`${styles.header__content__nav} ${menuOpen && size.width < 768 ? styles.isMenu : ""
-              }`}>
+            <nav
+              className={`${styles.header__content__nav} ${
+                menuOpen && size.width < 768 ? styles.isMenu : ''
+              }`}
+            >
               <ul>
                 <li>
-                  <ActiveLink activeClassName={styles.active} href="/" onClick={menuToggleHandler}>
+                  <ActiveLink
+                    activeClassName={styles.active}
+                    href="/"
+                    onClick={menuToggleHandler}
+                  >
                     <a>Home</a>
                   </ActiveLink>
                 </li>
                 <li>
-                  <ActiveLink activeClassName={styles.active} href="/resume" onClick={menuToggleHandler}>
+                  <ActiveLink
+                    activeClassName={styles.active}
+                    href="/resume"
+                    onClick={menuToggleHandler}
+                  >
                     <a>Resume</a>
                   </ActiveLink>
                 </li>
                 <li>
-                  <ActiveLink activeClassName={styles.active} href="/portfolio" onClick={menuToggleHandler}>
+                  <ActiveLink
+                    activeClassName={styles.active}
+                    href="/portfolio"
+                    onClick={menuToggleHandler}
+                  >
                     <a>Portfolio</a>
-                  </ActiveLink></li>
+                  </ActiveLink>
+                </li>
               </ul>
             </nav>
             <div className={styles.header__content__toggle}>
@@ -114,5 +132,5 @@ export default function Header({ top }: StickyProps) {
         </header>
       </div>
     </div>
-  )
+  );
 }
