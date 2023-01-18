@@ -69,7 +69,7 @@ export default function Header({ top }: StickyProps) {
   }, [size.width, menuOpen]);
 
   const menuToggleHandler = () => {
-    setMenuOpen((p) => !p);
+    setMenuOpen(!menuOpen);
   };
 
 

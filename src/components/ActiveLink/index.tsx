@@ -8,7 +8,7 @@ interface ActiveLinkProps extends LinkProps {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-export function ActiveLink({children, activeClassName, ...rest }: ActiveLinkProps) {
+export function ActiveLink({children, activeClassName, onClick, ...rest }: ActiveLinkProps) {
   const { asPath } = useRouter();
 
   const className = asPath === rest.href ? activeClassName : '';
@@ -17,6 +17,7 @@ export function ActiveLink({children, activeClassName, ...rest }: ActiveLinkProp
     <Link {...rest}>
       {cloneElement(children, {
         className,
+        onClick
       })}
     </Link>
   );

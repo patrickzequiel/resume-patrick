@@ -41,7 +41,6 @@ interface ResumeList {
 }
 
 const Resume = ({ resume, education }: ResumeList) => {
-    console.log(education);
     return (
         <>
             <Head>
