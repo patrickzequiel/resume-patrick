@@ -1,17 +1,17 @@
-import { GetStaticProps } from 'next'
+import { GetStaticProps } from 'next';
 import Type from './type';
 import { Row, Col } from 'react-bootstrap';
 import { Canvas } from 'react-three-fiber';
-import Controls from '../components/Canva/Controls';
-import Scene from '../components/Canva/Scene';
 
 import Head from 'next/head';
 
 import styles from './home.module.scss';
+// import Lights from '../components/Lights';
+// import Model from '../components/Model';
+
 // import ThreeJs from '../components/ThreeJs';
 
 export default function Home() {
-
   return (
     <>
       <Head>
@@ -22,27 +22,26 @@ export default function Home() {
           <main className={styles.contentContainer}>
             <section className={styles.hero}>
               <span>👏 Hey, welcome</span>
-              <h1>Meet <span>my</span> work.</h1>
+              <h1>
+                Meet <span>my</span> work.
+              </h1>
               <p>
-                I hope you have a great time<br />
-                <span style={{ padding: 50, textAlign: "left" }}>
+                I hope you have a great time
+                <br />
+                <span style={{ padding: 50, textAlign: 'left' }}>
                   <Type />
                 </span>
               </p>
             </section>
-
           </main>
         </Col>
         <Col md={6}>
-          {/* <ThreeJs /> */}
-          {/* <Controls />  */} 
-
-          {/* <Scene /> */}
-
+          {/* <Canvas colorManagement camera={{ position: [0, 0, 300] }}>
+            <Lights />
+            <Model />
+          </Canvas> */}
         </Col>
       </Row>
-
     </>
-  )
+  );
 }
-

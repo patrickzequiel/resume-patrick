@@ -21,9 +21,6 @@ export default function Card({ author, title, date, description, liked, likeCoun
     <Link href={link} passHref={true}>
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <div className={styles.profile}>
-          <span className={styles.letter}>{author[0]}</span>
-        </div>
         <div className={styles.cardTitleGroup}>
           <h5 className={styles.cardTitle}>{title}</h5>
           <div className={styles.cardDate}>{date}</div>
