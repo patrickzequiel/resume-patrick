@@ -69,7 +69,7 @@ export default function Header({ top }: StickyProps) {
 
   const menuToggleHandler = () => {
     const isMobile = size.width <= 768;
-    setMenuOpen(isMobile ? !menuOpen : menuOpen);
+    setMenuOpen(isMobile ? !menuOpen : false);
   };
 
   return (
